@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Structura generates 30 branded YouTube Shorts per month for online coaches — no editing, no content team.",
   icons: {
-    icon: "/structura_transparent_black.svg",
+    icon: "/favicon.svg",
   },
 };
 
