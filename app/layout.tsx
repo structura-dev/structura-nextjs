@@ -1,10 +1,14 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Structura — Automated YouTube Shorts for Online Coaches",
   description:
     "Structura generates 30 branded YouTube Shorts per month for online coaches — no editing, no content team.",
+  icons: {
+    icon: "/structura_transparent_black.svg",
+  },
 };
 
 export default function RootLayout({

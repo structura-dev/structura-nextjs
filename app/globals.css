@@ -376,6 +376,10 @@ img {
   margin-top: 16px;
 }
 
+.price-card .card-note {
+  margin-top: 16px;
+}
+
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
