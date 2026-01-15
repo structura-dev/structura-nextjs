@@ -260,6 +260,12 @@ img {
   margin: 0;
 }
 
+.note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 16px 0 0;
+}
+
 .section {
   padding-top: 40px;
 }
@@ -396,6 +402,11 @@ img {
 .faq-item p {
   margin: 10px 0 0;
   color: var(--muted);
+}
+
+.stripe-note {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .footer {

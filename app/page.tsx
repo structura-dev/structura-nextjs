@@ -22,7 +22,7 @@ export default function Home() {
 
       <section className="hero container">
         <div className="hero-content reveal">
-          <p className="eyebrow">Automation for online coaches</p>
+          <p className="eyebrow">For online coaches</p>
           <h1>Automated YouTube Shorts for online coaches.</h1>
           <p className="subhead">
             Structura generates 30 branded Shorts per month — no editing, no content
@@ -30,7 +30,7 @@ export default function Home() {
           </p>
           <div className="cta-row">
             <a className="button primary" href="STRIPE_PAYMENT_LINK_HERE">
-              Get Started
+              Get Your Shorts
             </a>
             <a className="button ghost" href="#pricing">
               See pricing
@@ -138,6 +138,9 @@ export default function Home() {
             <li>Private delivery folder</li>
             <li>Cancel anytime</li>
           </ul>
+          <p className="note">
+            No setup calls. No dashboards. We deliver the Shorts for you.
+          </p>
           <a className="button primary" href="STRIPE_PAYMENT_LINK_HERE">
             Get Started
           </a>
@@ -168,6 +171,9 @@ export default function Home() {
             <p>Not in v1. Structura v1 focuses on YouTube Shorts.</p>
           </div>
         </div>
+        <p className="note stripe-note">
+          Payments and cancellations are handled securely via Stripe.
+        </p>
       </section>
 
       <footer className="footer container">
