@@ -145,17 +145,19 @@ export default function Home() {
               <li>Delivered in 24 hours</li>
               <li>No editing required</li>
             </ul>
-            <p className="note">
-              $29 credited toward your first month if you subscribe within 7 days.
-            </p>
-            <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
-              Get Proof Pack
-            </a>
+            <div className="price-actions">
+              <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
+                Get Proof Pack
+              </a>
+              <p className="card-note">
+                $29 credited toward your first month if you subscribe within 7 days.
+              </p>
+            </div>
           </div>
           <div className="price-card reveal">
             <div className="price-top">
               <h3>Monthly</h3>
-              <span className="price-tag">Best for consistent creators</span>
+              <span className="pill">Best for consistent creators</span>
             </div>
             <p className="price">$149 CAD / month</p>
             <ul className="checklist">
@@ -164,10 +166,12 @@ export default function Home() {
               <li>First batch in 48 hours</li>
               <li>Cancel anytime</li>
             </ul>
-            <a className="button secondary" href={STRIPE_MONTHLY_URL}>
-              Start Monthly
-            </a>
-            <p className="card-note">Pause or cancel anytime from Stripe.</p>
+            <div className="price-actions">
+              <a className="button primary" href={STRIPE_MONTHLY_URL}>
+                Start Monthly
+              </a>
+              <p className="card-note">Pause or cancel anytime from Stripe.</p>
+            </div>
           </div>
         </div>
         <p className="note stripe-note">

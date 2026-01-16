@@ -348,24 +348,26 @@ img {
 }
 
 .pricing {
-  text-align: center;
+  text-align: left;
 }
 
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
+  align-items: stretch;
 }
 
 .price-card {
-  max-width: 520px;
-  margin: 0 auto;
+  height: 100%;
   background: var(--panel);
   padding: 32px;
   border-radius: 26px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .price-top {
@@ -385,19 +387,17 @@ img {
   font-weight: 600;
 }
 
-.price-tag {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
 .price {
   font-size: 2rem;
   font-weight: 700;
   margin: 16px 0 20px;
 }
 
-.price-card .button {
-  margin-top: 16px;
+.price-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .price-card .card-note {
