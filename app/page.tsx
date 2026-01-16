@@ -1,6 +1,11 @@
 import {
-  STRIPE_MONTHLY_URL,
+  STRIPE_MONTHLY_BUTTON_ID,
+  STRIPE_PROOF_PACK_BUTTON_ID,
+  STRIPE_PUBLISHABLE_KEY,
   STRIPE_PROOF_PACK_URL,
+  SAMPLE_VIDEO_1,
+  SAMPLE_VIDEO_2,
+  SAMPLE_VIDEO_3,
   SUPPORT_EMAIL,
 } from "./constants";
 
@@ -35,9 +40,11 @@ export default function Home() {
             for 30 Shorts.
           </p>
           <div className="cta-row">
-            <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
-              Get Proof Pack
-            </a>
+            <stripe-buy-button
+              className="stripe-button"
+              buy-button-id={STRIPE_PROOF_PACK_BUTTON_ID}
+              publishable-key={STRIPE_PUBLISHABLE_KEY}
+            />
             <a className="button ghost" href="#pricing">
               See pricing
             </a>
@@ -71,6 +78,40 @@ export default function Home() {
           </ul>
           <p className="card-note">Built for repeatable output, not busywork.</p>
         </aside>
+      </section>
+
+      <section className="section container samples">
+        <div className="section-head reveal">
+          <h2>What Structura Shorts look like</h2>
+          <p>
+            Calm, branded Shorts designed for daily posting — no editing required.
+          </p>
+        </div>
+        <div className="samples-grid">
+          {[SAMPLE_VIDEO_1, SAMPLE_VIDEO_2, SAMPLE_VIDEO_3].map((video) => (
+            <div className="video-card reveal" key={video}>
+              <div className="video-frame">
+                <iframe
+                  src={
+                    video.includes("youtube.com")
+                      ? video
+                      : `https://www.youtube.com/embed/${video}`
+                  }
+                  title="Structura Shorts sample"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="note samples-note">
+          Want these with your brand? Get a Proof Pack in 24 hours.
+        </p>
+        <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
+          Get Proof Pack ($29)
+        </a>
       </section>
 
       <section id="benefits" className="section container">
@@ -146,9 +187,11 @@ export default function Home() {
               <li>No editing required</li>
             </ul>
             <div className="price-actions">
-              <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
-                Get Proof Pack
-              </a>
+              <stripe-buy-button
+                className="stripe-button"
+                buy-button-id={STRIPE_PROOF_PACK_BUTTON_ID}
+                publishable-key={STRIPE_PUBLISHABLE_KEY}
+              />
               <p className="card-note">
                 $29 credited toward your first month if you subscribe within 7 days.
               </p>
@@ -167,9 +210,11 @@ export default function Home() {
               <li>Cancel anytime</li>
             </ul>
             <div className="price-actions">
-              <a className="button primary" href={STRIPE_MONTHLY_URL}>
-                Start Monthly
-              </a>
+              <stripe-buy-button
+                className="stripe-button"
+                buy-button-id={STRIPE_MONTHLY_BUTTON_ID}
+                publishable-key={STRIPE_PUBLISHABLE_KEY}
+              />
               <p className="card-note">Pause or cancel anytime from Stripe.</p>
             </div>
           </div>
