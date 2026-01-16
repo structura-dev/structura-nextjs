@@ -351,6 +351,12 @@ img {
   text-align: center;
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
 .price-card {
   max-width: 520px;
   margin: 0 auto;
@@ -359,12 +365,24 @@ img {
   border-radius: 26px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  text-align: left;
 }
 
 .price-top {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.pill {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(15, 42, 82, 0.08);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 .price-tag {

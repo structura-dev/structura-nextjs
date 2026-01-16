@@ -1,3 +1,9 @@
+import {
+  STRIPE_MONTHLY_URL,
+  STRIPE_PROOF_PACK_URL,
+  SUPPORT_EMAIL,
+} from "./constants";
+
 export default function Home() {
   return (
     <main className="page">
@@ -15,7 +21,7 @@ export default function Home() {
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a className="button secondary" href="STRIPE_PAYMENT_LINK_HERE">
+        <a className="button secondary" href="#pricing">
           Get Started
         </a>
       </header>
@@ -25,12 +31,12 @@ export default function Home() {
           <p className="eyebrow">For online coaches</p>
           <h1>Automated YouTube Shorts for online coaches.</h1>
           <p className="subhead">
-            Structura generates 30 branded Shorts per month — no editing, no content
-            team.
+            Try Structura with a $29 Proof Pack (3 Shorts in 24 hours), or go monthly
+            for 30 Shorts.
           </p>
           <div className="cta-row">
-            <a className="button primary" href="STRIPE_PAYMENT_LINK_HERE">
-              Get Your Shorts
+            <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
+              Get Proof Pack
             </a>
             <a className="button ghost" href="#pricing">
               See pricing
@@ -126,26 +132,47 @@ export default function Home() {
           <h2>Simple pricing</h2>
           <p>Everything is included. No setup fees or long contracts.</p>
         </div>
-        <div className="price-card reveal">
-          <div className="price-top">
-            <h3>Structura Monthly</h3>
-            <span className="price-tag">Best for consistent creators</span>
+        <div className="pricing-grid">
+          <div className="price-card reveal">
+            <div className="price-top">
+              <h3>Proof Pack</h3>
+              <span className="pill">Best for trying Structura</span>
+            </div>
+            <p className="price">$29 CAD</p>
+            <ul className="checklist">
+              <li>3 branded YouTube Shorts</li>
+              <li>Captions.txt included</li>
+              <li>Delivered in 24 hours</li>
+              <li>No editing required</li>
+            </ul>
+            <p className="note">
+              $29 credited toward your first month if you subscribe within 7 days.
+            </p>
+            <a className="button primary" href={STRIPE_PROOF_PACK_URL}>
+              Get Proof Pack
+            </a>
           </div>
-          <p className="price">$99 CAD / month</p>
-          <ul className="checklist">
-            <li>30 branded YouTube Shorts / month</li>
-            <li>Captions included</li>
-            <li>Private delivery folder</li>
-            <li>Cancel anytime</li>
-          </ul>
-          <p className="note">
-            No setup calls. No dashboards. We deliver the Shorts for you.
-          </p>
-          <a className="button primary" href="STRIPE_PAYMENT_LINK_HERE">
-            Get Started
-          </a>
-          <p className="card-note">Pause or cancel anytime from Stripe.</p>
+          <div className="price-card reveal">
+            <div className="price-top">
+              <h3>Monthly</h3>
+              <span className="price-tag">Best for consistent creators</span>
+            </div>
+            <p className="price">$149 CAD / month</p>
+            <ul className="checklist">
+              <li>30 branded YouTube Shorts / month</li>
+              <li>Captions.txt included</li>
+              <li>First batch in 48 hours</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <a className="button secondary" href={STRIPE_MONTHLY_URL}>
+              Start Monthly
+            </a>
+            <p className="card-note">Pause or cancel anytime from Stripe.</p>
+          </div>
         </div>
+        <p className="note stripe-note">
+          Payments and cancellations are handled securely via Stripe.
+        </p>
       </section>
 
       <section id="faq" className="section container">
@@ -155,25 +182,25 @@ export default function Home() {
         </div>
         <div className="faq-grid">
           <div className="faq-item reveal">
-            <strong>How long does delivery take?</strong>
-            <p>Your first batch is delivered within 48 hours of subscribing.</p>
+            <strong>What is the Proof Pack?</strong>
+            <p>
+              Three branded Shorts delivered in 24 hours, and credited toward your
+              first month if you subscribe within 7 days.
+            </p>
           </div>
           <div className="faq-item reveal">
-            <strong>Do you edit videos?</strong>
-            <p>No. Structura generates ready-to-post Shorts. v1 does not include custom edits.</p>
+            <strong>Is there a free trial?</strong>
+            <p>No, we offer a low-cost Proof Pack instead.</p>
           </div>
           <div className="faq-item reveal">
-            <strong>Can I cancel anytime?</strong>
-            <p>Yes. Cancel anytime from Stripe.</p>
+            <strong>Do you use my logo?</strong>
+            <p>If provided; otherwise we use your brand name in the footer.</p>
           </div>
           <div className="faq-item reveal">
-            <strong>Do you support Instagram or TikTok?</strong>
-            <p>Not in v1. Structura v1 focuses on YouTube Shorts.</p>
+            <strong>How do I get my Shorts?</strong>
+            <p>Delivered via a private folder plus a captions.txt file.</p>
           </div>
         </div>
-        <p className="note stripe-note">
-          Payments and cancellations are handled securely via Stripe.
-        </p>
       </section>
 
       <footer className="footer container">
@@ -187,7 +214,7 @@ export default function Home() {
         </div>
         <div className="footer-meta">
           <p>
-            Questions? <a href="mailto:hello@getstructura.com">hello@getstructura.com</a>
+            Questions? <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
           </p>
           <p className="copyright">
             © {new Date().getFullYear()} Structura. All rights reserved.
